@@ -9,6 +9,8 @@ readme = "README.md"
 python = "^3.9"
 librosa = "^0.10.1"
 ipykernel = "^6.26.0"
+ipython = "^8.18.0"
+matplotlib = "^3.8.2"
 
 
 [build-system]
