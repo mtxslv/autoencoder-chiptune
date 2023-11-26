@@ -3,6 +3,8 @@
 ## DATA STUFF
 Data available [here](https://downloads.khinsider.com/game-soundtracks/album/legend-of-zelda-the-a-link-to-the-past-snes)
 
+[MP3 to WAV programatically, StackOverFlow](https://stackoverflow.com/questions/3049572/how-to-convert-mp3-to-wav-in-python)
+
 ## ON MEL SPECTROGRAM
 
 [Ketanhdoshi, Github IO](https://ketanhdoshi.github.io/Audio-Mel/)
