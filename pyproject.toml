@@ -1,9 +1,12 @@
 [tool.poetry]
 name = "autoencoder-chiptune"
 version = "0.1.0"
-description = ""
+description = "Let's autoencoder some chiptune beats to see if we can plot them as a cool map."
 authors = ["Mateus Assis <mateus.d.assis.silva@gmail.com>"]
 readme = "README.md"
+packages = [
+    { include = "src"}
+] 
 
 [tool.poetry.dependencies]
 python = "^3.9"
