@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import librosa
+import matplotlib.pyplot as plt
 import numpy as np
 
 
@@ -44,7 +46,8 @@ class MelSGram():
 
     def __init__(self,    
                  file_name: Path,
-                 content: np.ndarray,) -> None:
+                 content: np.ndarray,
+                 sample_rate: int) -> None:
         """Mel Spectrogram object.
 
         Parameters
@@ -53,9 +56,12 @@ class MelSGram():
             File name where Mel Spectrogram was extract from
         content : np.ndarray
             Mel Spectrogram contents as a 2 Dimensional matrix.
+        sample_rate : int
+            Sample rate
         """
         self.file_name = file_name
         self.content = content
+        self.sample_rate = sample_rate
 
     @property
     def shape(self):
@@ -63,3 +69,13 @@ class MelSGram():
     
     def __repr__(self) -> str:
         return f'Mel Spectrogram with shape {self.shape}'
+    
+    def plot(self,):
+        """Plot mel spectrogram.
+        """
+        librosa.display.specshow(self.content, 
+                                 sr=self.sample_rate,
+                                 x_axis='time', 
+                                 y_axis='mel')
+        plt.title(self.file_name.name)
+        plt.colorbar(format='%+2.0f dB')            
