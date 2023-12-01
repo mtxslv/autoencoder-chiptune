@@ -8,12 +8,12 @@ class Tune():
     """
     samples: np.ndarray
     sample_rate: int
-    file_name: Path 
+    file_path: Path 
 
     def __init__(self,
                  samples: np.ndarray,
                  sample_rate: int,
-                 file_name: Path, ) -> None:
+                 file_path: Path, ) -> None:
         """Tune Object.
 
         Parameters
@@ -22,12 +22,12 @@ class Tune():
             Audio samples.
         sample_rate : int
             Sample rate
-        file_name : Path
-            File name where Tune was extract from.
+        file_path : Path
+            Path where Tune was extract from.
         """
         self.samples = samples
         self.sample_rate = sample_rate
-        self.file_name = file_name
+        self.file_path = file_path
 
     @property
     def time_length(self,) -> float:
