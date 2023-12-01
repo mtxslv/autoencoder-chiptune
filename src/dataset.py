@@ -76,7 +76,7 @@ class TuneDataset():
             tune = Tune(
                 samples = samples,
                 sample_rate = sample_rate,
-                file_name = str(file_path)
+                file_path = file_path
             )
             self.tunes.append(tune)
             if verbose:
