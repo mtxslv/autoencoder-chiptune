@@ -41,25 +41,25 @@ class Tune():
 class MelSGram():
     """ Mel Spectrogram. Contain file name and content. 
     """
-    file_name: Path
+    file_path: Path
     content: np.ndarray
 
     def __init__(self,    
-                 file_name: Path,
+                 file_path: Path,
                  content: np.ndarray,
                  sample_rate: int) -> None:
         """Mel Spectrogram object.
 
         Parameters
         ----------
-        file_name : Path
-            File name where Mel Spectrogram was extract from
+        file_path : Path
+            File path where Mel Spectrogram was extract from
         content : np.ndarray
             Mel Spectrogram contents as a 2 Dimensional matrix.
         sample_rate : int
             Sample rate
         """
-        self.file_name = file_name
+        self.file_name = file_path
         self.content = content
         self.sample_rate = sample_rate
 
