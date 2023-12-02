@@ -130,3 +130,17 @@ class TuneDataset():
             self.mel_sgrams.append(mel_sg)
             if verbose:
                 print(f'{100*(it/len(self.tunes))} %')
+
+    def dump_tunes(self, path: Path, output_type: str = 'numpy') -> None:
+        """Dump the audios to a folder in the specified format.
+
+        Parameters
+        ----------
+        path : Path
+            Output folder path.
+        output_type : str, optional
+            Type of output file ('numpy' or 'wav'), by default 'numpy'.
+        """
+        for tune in self.tunes:
+            tune.dump(path,
+                      output_type)
