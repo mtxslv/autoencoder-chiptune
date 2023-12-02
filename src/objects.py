@@ -134,7 +134,7 @@ class MelSGram():
         sample_rate : int
             Sample rate
         """
-        self.file_name = file_path
+        self.file_path = file_path
         self.content = content
         self.sample_rate = sample_rate
 
