@@ -173,6 +173,5 @@ class MelSGram():
         # Create the full output file path
         output_file_path = path / f"{file_name}.npy"
 
-        if output_type == 'numpy':
-            # Save the Mel Sgrams as a NumPy array
-            np.save(output_file_path, self.content)
+        # Save the Mel Sgrams as a NumPy array
+        np.save(output_file_path, self.content)
