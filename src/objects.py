@@ -154,3 +154,25 @@ class MelSGram():
                                  y_axis='mel')
         plt.title(self.file_name.name)
         plt.colorbar(format='%+2.0f dB')            
+
+    def dump(self, path: Path) -> None:
+        """Dump the Mel Spectrogram to a numpy file.
+
+        Parameters
+        ----------
+        path : Path
+            Output folder path.
+        """
+        # Check if the specified path is a folder and exists
+        if not path.is_dir() or not path.exists():
+            raise ValueError("Invalid output folder path.")
+
+        # Extract the file name from self.file_path
+        file_name = self.file_path.stem
+
+        # Create the full output file path
+        output_file_path = path / f"{file_name}.npy"
+
+        if output_type == 'numpy':
+            # Save the Mel Sgrams as a NumPy array
+            np.save(output_file_path, self.content)
