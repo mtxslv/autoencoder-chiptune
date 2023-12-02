@@ -38,6 +38,34 @@ class Tune():
     def __repr__(self) -> str:
         return f'{self.time_length} seconds audio.'
 
+    def pad(self, target_time: float) -> None:
+        """Pad the audio to a target time by repeating the existing samples.
+
+        Parameters
+        ----------
+        target_time : float
+            Target duration of the padded audio in seconds.
+        """
+        current_time = self.time_length
+        target_samples = int(target_time * self.sample_rate)
+
+        if target_samples <= self.samples.shape[0]:
+            # No padding needed, return
+            return
+
+        # Calculate how many samples to pad
+        samples_to_pad = target_samples - self.samples.shape[0]
+
+        # Repeat the existing samples to pad the audio
+        repeated_samples = np.tile(self.samples, 
+                                   int(np.ceil(target_samples / self.samples.shape[0])))
+
+        # Trim the repeated samples to the target length
+        padded_samples = repeated_samples[:target_samples]
+
+        # Update the samples attribute
+        self.samples = padded_samples
+
 class MelSGram():
     """ Mel Spectrogram. Contain file name and content. 
     """
