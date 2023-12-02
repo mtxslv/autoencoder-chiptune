@@ -152,7 +152,7 @@ class MelSGram():
                                  sr=self.sample_rate,
                                  x_axis='time', 
                                  y_axis='mel')
-        plt.title(self.file_name.name)
+        plt.title(self.file_path.name)
         plt.colorbar(format='%+2.0f dB')            
 
     def dump(self, path: Path) -> None:
