@@ -27,3 +27,10 @@ Soundeffects are, in general, short tunes that play when we interact we somethin
 - _01. Title ~ Link to the Past.wav_: this track is the menu theme. Then I considered it a soundeffect.
 
 Likewise, the soundscapes are tunes played in exploration phases, in the open world or in a dungeon (or other closed spaces). It is important to note, though, some tunes are considered soundscapes even though they are short, like _02. Beginning of the Journey.wav_ or _08. Princess Zelda's Rescue.wav_. One of the reasons is because some of such tunes occurs in pairs, because an ambience (like rain or wind) is applied to it. I kept them in the dataset to check if they appear close in the embedded space. For instance, we have the pairs: _25. Black Mist.wav_ and _26. Black Mist (Storm).wav_, and _06. Majestic Castle.wav_ and _07. Majestic Castle (Storm).wav_.
+
+# Data Zipping
+
+In order to zip the mel-sgrams, run
+```
+$ zip -r ./data/processed/soundscapes-mel-sgrams.zip ./data/processed/soundscapes-mel-sgrams
+```
