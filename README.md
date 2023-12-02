@@ -21,7 +21,7 @@ The file metdata.csv contain a classification I personally did on the audio samp
 - soundeffect
 - soundscape
 
-Soundeffects are, in general, short tunes that play when we interact we something in game. I expand on that concept to consider also melodies played under certain circumstances, like boss fight, cutscenes, or object interaction. Two examples of such _soundeffects_ are:
+Soundeffects are, in general, short tunes that play when we interact we something in game. I expand on that concept to consider also melodies played under certain circumstances, like boss fight, and cutscenes. Two examples of such _soundeffects_ are:
 - _23. Priest of the Dark Order.wav_: this track plays when Agahnin 'kills' Zelda. Even being a long tune, it is consider a cutscene soundeffect;
 - _01. Title ~ Link to the Past.wav_: this track is the menu theme. Then I considered it a soundeffect.
 
