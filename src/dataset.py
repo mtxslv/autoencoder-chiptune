@@ -101,8 +101,9 @@ class TuneDataset():
             mel_sgram = librosa.amplitude_to_db(mel_scale_sgram, 
                                                 ref=np.min)
             mel_sg = MelSGram(
-                file_name = tune.file_name,
-                content = mel_sgram
+                file_path = tune.file_path,
+                content = mel_sgram,
+                sample_rate = tune.sample_rate
             )
             self.mel_sgrams.append(mel_sg)
             if verbose:
