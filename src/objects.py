@@ -64,6 +64,26 @@ class Tune():
         # Update the samples attribute
         self.samples = padded_samples
 
+    def crop(self, target_time: float) -> None:
+        """Crop the audio to a target time by removing excess samples.
+
+        Parameters
+        ----------
+        target_time : float
+            Target duration of the cropped audio in seconds.
+        """
+        target_samples = int(target_time * self.sample_rate)
+
+        if target_samples >= self.samples.shape[0]:
+            # No cropping needed, return
+            return
+
+        # Crop the audio to the target length
+        cropped_samples = self.samples[:target_samples]
+
+        # Update the samples attribute
+        self.samples = cropped_samples
+
     def dump(self, path: Path, output_type: str = 'numpy') -> None:
         """Dump the audio to a file in the specified format.
 
