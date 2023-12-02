@@ -9,6 +9,7 @@ Data available [here](https://downloads.khinsider.com/game-soundtracks/album/leg
 
 [Ketanhdoshi, Github IO](https://ketanhdoshi.github.io/Audio-Mel/)
 [Gartzman, Medium](https://towardsdatascience.com/getting-to-know-the-mel-spectrogram-31bca3e2d9d0)
+[Mel Bands, StackOverFlow](https://stackoverflow.com/questions/62623975/why-128-mel-bands-are-used-in-mel-spectrograms)
 
 ## MODEL STUFF
 
