@@ -105,6 +105,7 @@ class TuneDataset():
             tune.crop(target_time)
         
     def extract_mel_sgrams(self,
+                           n_mels: int = 128,
                            verbose: bool = True):
         """Extract Mel Spectrogram from previously extracted file contents.
 
@@ -118,6 +119,7 @@ class TuneDataset():
             sgram = librosa.stft(tune.samples)
             sgram_mag, _ = librosa.magphase(sgram)
             mel_scale_sgram = librosa.feature.melspectrogram(S=sgram_mag, 
+                                                             n_mels = n_mels,    
                                                              sr=tune.sample_rate)
             # use the decibel scale to get the final Mel Spectrogram
             mel_sgram = librosa.amplitude_to_db(mel_scale_sgram, 
@@ -144,3 +146,14 @@ class TuneDataset():
         for tune in self.tunes:
             tune.dump(path,
                       output_type)
+
+    def dump_mel_sgrams(self, path: Path) -> None:
+        """Dump the Mel Sgrams to a folder in the specified format.
+
+        Parameters
+        ----------
+        path : Path
+            Output folder path.
+        """
+        for mel_sg in self.mel_sgrams:
+            mel_sg.dump(path)                      
