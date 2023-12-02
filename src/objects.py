@@ -3,7 +3,7 @@ from pathlib import Path
 import librosa
 import matplotlib.pyplot as plt
 import numpy as np
-
+from scipy.io import wavfile
 
 class Tune():
     """Tune library for audio files. Contain samples, sample rate and file name.
@@ -53,8 +53,6 @@ class Tune():
             # No padding needed, return
             return
 
-        # Calculate how many samples to pad
-        samples_to_pad = target_samples - self.samples.shape[0]
 
         # Repeat the existing samples to pad the audio
         repeated_samples = np.tile(self.samples, 
@@ -65,6 +63,35 @@ class Tune():
 
         # Update the samples attribute
         self.samples = padded_samples
+
+    def dump(self, path: Path, output_type: str = 'numpy') -> None:
+        """Dump the audio to a file in the specified format.
+
+        Parameters
+        ----------
+        path : Path
+            Output folder path.
+        output_type : str, optional
+            Type of output file ('numpy' or 'wav'), by default 'numpy'.
+        """
+        # Check if the specified path is a folder and exists
+        if not path.is_dir() or not path.exists():
+            raise ValueError("Invalid output folder path.")
+
+        # Extract the file name from self.file_path
+        file_name = self.file_path.stem
+
+        # Create the full output file path
+        output_file_path = path / f"{file_name}.{output_type}"
+
+        if output_type == 'numpy':
+            # Save the audio samples as a NumPy array
+            np.save(output_file_path, self.samples)
+        elif output_type == 'wav':
+            # Save the audio samples as a WAV file
+            wavfile.write(output_file_path, self.sample_rate, self.samples)
+        else:
+            raise ValueError("Invalid output_type. Supported types are 'numpy' or 'wav'.")        
 
 class MelSGram():
     """ Mel Spectrogram. Contain file name and content. 
