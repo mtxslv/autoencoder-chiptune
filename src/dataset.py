@@ -81,6 +81,17 @@ class TuneDataset():
             self.tunes.append(tune)
             if verbose:
                 print(f'{100*(it/len(self.file_paths))} %')
+
+    def pad_tunes(self, target_time: float) -> None:
+        """Pad the tunes to a target time by repeating the existing samples. Tunes with longer times are left unchanged.
+
+        Parameters
+        ----------
+        target_time : float
+            Target duration of the padded audio in seconds.
+        """
+        for tune in self.tunes:
+            tune.pad(target_time)
     
     def extract_mel_sgrams(self,
                            verbose: bool = True):
