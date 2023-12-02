@@ -13,3 +13,16 @@ Data available [here](https://downloads.khinsider.com/game-soundtracks/album/leg
 ## MODEL STUFF
 
 [Autoencoder in Tensorflow](https://www.tensorflow.org/tutorials/generative/autoencoder)
+
+
+# On the data analysis
+
+The file metdata.csv contain a classification I personally did on the audio samples. I classify the samples into two categories:
+- soundeffect
+- soundscape
+
+Soundeffects are, in general, short tunes that play when we interact we something in game. I expand on that concept to consider also melodies played under certain circumstances, like boss fight, cutscenes, or object interaction. Two examples of such _soundeffects_ are:
+- _23. Priest of the Dark Order.wav_: this track plays when Agahnin 'kills' Zelda. Even being a long tune, it is consider a cutscene soundeffect;
+- _01. Title ~ Link to the Past.wav_: this track is the menu theme. Then I considered it a soundeffect.
+
+Likewise, the soundscapes are tunes played in exploration phases, in the open world or in a dungeon (or other closed spaces). It is important to note, though, some tunes are considered soundscapes even though they are short, like _02. Beginning of the Journey.wav_ or _08. Princess Zelda's Rescue.wav_. 
