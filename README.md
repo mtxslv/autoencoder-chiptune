@@ -14,7 +14,8 @@ Data available [here](https://downloads.khinsider.com/game-soundtracks/album/leg
 ## MODEL STUFF
 
 [Autoencoder in Tensorflow](https://www.tensorflow.org/tutorials/generative/autoencoder)
-
+[Deeper Autoencoder](https://blog.keras.io/building-autoencoders-in-keras.html)
+[CVAE](https://www.tensorflow.org/tutorials/generative/cvae)
 
 # On the data analysis
 
