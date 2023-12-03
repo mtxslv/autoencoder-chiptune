@@ -15,6 +15,7 @@ ipykernel = "^6.26.0"
 ipython = "^8.18.0"
 matplotlib = "^3.8.2"
 tensorflow = "^2.15.0"
+plotly = "^5.18.0"
 
 
 [tool.poetry.group.dev.dependencies]
